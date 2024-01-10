@@ -24,3 +24,25 @@ Non le code ne fonctionne pas car il manque le wrapper `@State`.
 **Expliquez pourquoi maintenant cela fonctionne ?**
 Cela fonctionne car le wrapper `@State` permet de rendre la variable "loot" modifiable.
 
+# Créer l'inventaire
+
+## 🔧 Exercice 1
+
+**Cliquez sur le bouton “Ajouter”, que se passe-t-il ? Pourquoi cela ne marche pas ?**
+Il ne se passe rien et cela ne fonctionne pas car inventory n'est pas modifiable. Il faut ajouter @StateObject à Inventory.
+
+**Si vous ajoutez plusieurs items, que se passe-t-il dans la console XCode, vous devriez avoir un message d’erreur, expliquez pourquoi ?**
+Je ne sais pas ce que j'ai mal fait mais tout fonctionne
+
+## Exercice 2
+**Pourquoi cela fonctionne de nouveau ?**
+La variable `inventory` est maintenant accessible
+ 
+**Pourquoi utiliser @StateObject plutôt que @ObservedObject ou @State ?**
+StateObject n'écrase pas le tableau de donnée il modifie juste la donnée spécifique (pas comme ObservedObject) tandis que `@State` ne peut pas comparer un objet. Seulement les types simples.
+
+
+
+
+
+
