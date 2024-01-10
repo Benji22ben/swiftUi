@@ -9,8 +9,9 @@ import SwiftUI
 
 class Inventory: ObservableObject {
     @Published var loot: [LootItem] = [
-        LootItem(name: "Epoustouflante Sword", type: .magic, rarity: .uncommon, game: availableGames[0]),
-        LootItem(quantity: 2, name: "Magnificient Bow", type: .bow, rarity: .rare, attackStrength: 15, game: availableGames[0])
+        LootItem(name: "Epoustouflante Sword", type: .fire, rarity: .uncommon, game: availableGames[0]),
+        LootItem(quantity: 2, name: "Magnificient Bow", type: .bow, rarity: .rare, attackStrength: 15, game: availableGames[0]),
+        LootItem(quantity: 2, name: "Healthy Rege", type: .magic, rarity: .legendary, attackStrength: 0, game: availableGames[2])
     ]
     
 //    func addItem(item: String) {
@@ -33,16 +34,21 @@ struct ContentView: View {
                 })
 
                 ForEach(inventory.loot) { item in
-                    VStack (alignment: .leading) {
-                        HStack {
+                    NavigationLink {
+                        LootDetailView(item: item)
+                    }
+                    label : {
+                        VStack (alignment: .leading) {
                             HStack {
-                                Circle().fill(item.rarity.getColor()).frame(width: 10)
-                                Text(item.name)
+                                HStack {
+                                    Circle().fill(item.rarity.getColor()).frame(width: 10)
+                                    Text(item.name)
+                                }
+                                Spacer()
+                                Text(item.type.rawValue)
                             }
-                            Spacer()
-                            Text(item.type.rawValue)
+                            Text("Quantité : " + String(item.quantity))
                         }
-                        Text("Quantité : " + String(item.quantity))
                     }
                     
                 }

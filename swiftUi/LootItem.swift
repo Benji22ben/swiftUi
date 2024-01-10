@@ -17,6 +17,6 @@ struct LootItem: Hashable, Identifiable {
     var game : Game
 }
 
-enum ItemType: String {
+enum ItemType: String, CaseIterable {
     case magic = "⭐️", fire = "🔥", ice = "❄️", wind = "💨", poison = "☠️", thunder = "⚡️",dagger = "🗡️",shield = "🛡️",bow = "🏹",ring = "💍",unknown = "🎲"
 }

@@ -32,6 +32,22 @@ enum Rarity: CaseIterable {
 struct AddItemView: View {
     @State var name: String = ""
     @State var rarity: Rarity = .common
+    @State var game: Game = availableGames[0]
+    @State var quantity: Int = 1
+    @State var type: ItemType = .unknown
+    @State var isAttack: Bool = false
+    
+    func incrementStep() {
+        quantity += 1
+    }
+
+
+    func decrementStep() {
+        quantity -= 1
+    }
+    
+
+    
     @EnvironmentObject var inventory: Inventory
     @Environment(\.dismiss) var dismiss
     
@@ -45,12 +61,51 @@ struct AddItemView: View {
                     }
                 }
             }
+            Section {
+                Picker("Jeu", selection: $game) {
+                    ForEach(availableGames, id: \.self) {game in
+                        Text(game.name)
+                    }
+                }
+                Stepper {
+                    HStack {
+                        Text("Quantité ")
+                        Spacer()
+                        Text(String(quantity))
+                    }
+
+                } onIncrement: {
+                    incrementStep()
+                } onDecrement: {
+                    decrementStep()
+                }
+            }
+            Section {
+                HStack {
+                    Text("Type")
+                    Spacer()
+                    Text(type.rawValue)
+                }
+                Picker("Type", selection: $type) {
+                    ForEach(ItemType.allCases, id: \.self) { type in
+                        Text(type.rawValue)
+                    }
+                }.pickerStyle(.palette)
+            }
+            Section {
+                HStack {
+                    Text("Item d'attaque ?")
+                    Spacer()
+                    Toggle("", isOn: $isAttack)
+                }
+                
+            }
             Button(action: {
 //                inventory.addItem(item: name) // L'action de notre bouton
                 dismiss()
             }, label: {
-                Image(systemName: "plus.circle.fill")
-                Text("Ajouter")
+                    Image(systemName: "plus.circle.fill")
+                    Text("Ajouter")
             })
         }
     }

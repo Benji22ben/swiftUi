@@ -17,6 +17,7 @@
 		7A248D732B4EA6E100C6EAC8 /* AddItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A248D722B4EA21F00C6EAC8 /* AddItemView.swift */; };
 		7A3E34B62B4EC2D400802944 /* LootItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3E34B52B4EC2D400802944 /* LootItem.swift */; };
 		7A3E34B82B4EC3FC00802944 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3E34B72B4EC3FC00802944 /* Game.swift */; };
+		7A3E34BA2B4ED90C00802944 /* LootDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3E34B92B4ED90C00802944 /* LootDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		7A248D722B4EA21F00C6EAC8 /* AddItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemView.swift; sourceTree = "<group>"; };
 		7A3E34B52B4EC2D400802944 /* LootItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LootItem.swift; sourceTree = "<group>"; };
 		7A3E34B72B4EC3FC00802944 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		7A3E34B92B4ED90C00802944 /* LootDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LootDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				7A248D722B4EA21F00C6EAC8 /* AddItemView.swift */,
+				7A3E34B92B4ED90C00802944 /* LootDetailView.swift */,
 				7A248D472B4E98F200C6EAC8 /* swiftUiApp.swift */,
 				7A248D492B4E98F200C6EAC8 /* ContentView.swift */,
 				7A3E34B52B4EC2D400802944 /* LootItem.swift */,
@@ -271,6 +274,7 @@
 				7A248D4A2B4E98F200C6EAC8 /* ContentView.swift in Sources */,
 				7A3E34B82B4EC3FC00802944 /* Game.swift in Sources */,
 				7A248D732B4EA6E100C6EAC8 /* AddItemView.swift in Sources */,
+				7A3E34BA2B4ED90C00802944 /* LootDetailView.swift in Sources */,
 				7A3E34B62B4EC2D400802944 /* LootItem.swift in Sources */,
 				7A248D482B4E98F200C6EAC8 /* swiftUiApp.swift in Sources */,
 			);
